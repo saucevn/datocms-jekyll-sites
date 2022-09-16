@@ -1,4 +1,8 @@
-baseurl: ""
+name: 'Thich Cay Magazine'
+description: 'Nấu ăn & Gia vị.'
+logo: 'assets/images/logo.png'
+favicon: '/favicon.ico'
+baseurl: '/'
 url: "/"
 markdown: kramdown
 source: "src"
@@ -6,15 +10,20 @@ destination: "public"
 
 plugins:
   - jekyll-paginate-v2
-
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  
 pagination:
   enabled: true
   per_page: 5
   permalink: '/page/:num/'
 
+highlighter: rouge
+
 collections:
   works:
     output: true
 
-exclude:
-  - node_modules
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
